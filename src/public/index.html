@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addis Bingo</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header with game info -->
+        <div class="game-header">
+            <div class="wallet">Wallet: <span id="wallet-amount">0.00</span></div>
+            <div class="active-game">Active Game: <span id="game-number">15</span></div>
+            <div class="stake">Stake: <span id="stake-amount">10</span></div>
+        </div>
+
+        <!-- Game controls -->
+        <div class="game-controls">
+            <div class="game-id">Game #<span id="game-id">H19718</span></div>
+            <div class="derash">Derash: <span id="derash-count">0</span></div>
+            <div class="bonus">Bonus: <span id="bonus-amount">-</span></div>
+            <div class="players">Players: <span id="player-count">2</span></div>
+            <div class="bet">Bet: <span id="bet-amount">0</span></div>
+            <div class="call">Call: <span id="call-count">3</span></div>
+        </div>
+
+        <!-- BINGO letters -->
+        <div class="bingo-letters">
+            <span class="letter b">B</span>
+            <span class="letter i">I</span>
+            <span class="letter n">N</span>
+            <span class="letter g">G</span>
+            <span class="letter o">O</span>
+        </div>
+
+        <!-- Game status -->
+        <div class="game-status">
+            <div class="countdown">Count Down</div>
+            <div class="status" id="game-status">Wait</div>
+        </div>
+
+        <!-- Current call display -->
+        <div class="current-call">
+            <div class="call-label">Current Call</div>
+            <div class="call-number" id="current-number">-</div>
+        </div>
+
+        <!-- Called numbers history -->
+        <div class="called-numbers" id="called-numbers"></div>
+
+        <!-- Bingo board -->
+        <div class="bingo-board" id="bingo-board"></div>
+
+        <!-- Game actions -->
+        <div class="game-actions">
+            <button id="bingo-button" class="primary-button">BINGO!</button>
+            <div class="secondary-actions">
+                <button id="refresh-button">Refresh</button>
+                <button id="leave-button">Leave</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
